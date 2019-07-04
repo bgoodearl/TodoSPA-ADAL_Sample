@@ -11,6 +11,7 @@
 		<td>
 			New solution in VS2019 - Angular app.
 			Updated to Angular 7.<br/>
+			Added Todo API.<br/>
 		</td>
     </tr>
     <tr>
