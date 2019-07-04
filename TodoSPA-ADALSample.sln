@@ -5,6 +5,14 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoSPA", "TodoSPA\TodoSPA.csproj", "{39EE8EBB-5F1E-4E2F-B08D-354598ECB74C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docs", "_docs", "{05AA9AE2-C50F-4598-AF63-4E6FDB3B45BB}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+		_docs\TSA_DevNotes.md = _docs\TSA_DevNotes.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_initialSetup", "_initialSetup", "{299BA6CE-5906-46B5-A001-0D4D76A0D10A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
