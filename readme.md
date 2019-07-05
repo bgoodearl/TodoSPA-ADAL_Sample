@@ -143,3 +143,13 @@ Got:
 [{"id":1,"creationTime":"2019-07-04T17:22:19.7934869-04:00","name":"Item1","isComplete":false,"owner":"unknown"}]
 ```
 
+
+## Resources
+
+See the following pages for additional resources
+
+[Azure Active Directory Resources](./_docs/AzureADResources.md)
+
+## Dev Notes
+
+[Developer Notes](./_docs/TSA_DevNotes.md)
