@@ -12,6 +12,7 @@
 			New solution in VS2019 - Angular app.
 			Updated to Angular 7.<br/>
 			Added Todo API.<br/>
+			Added todo and error component to Angular app.<br/>
 		</td>
     </tr>
     <tr>

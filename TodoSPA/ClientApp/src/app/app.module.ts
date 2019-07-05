@@ -4,31 +4,39 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { appRoutes } from "./app.routes";
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
+import { ErrorComponent } from "./shared/error.component";
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { HomeComponent } from './home/home.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { TodoListComponent } from "./todo-list/todo-list.component";
+
+import { TodoListService } from "./todo-list/todo-list.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
-    HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    ErrorComponent,
+    FetchDataComponent,
+    HomeComponent,
+    NavMenuComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-    ])
+    RouterModule.forRoot(appRoutes, { useHash: true })
   ],
-  providers: [],
+  providers: [TodoListService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  static VER: string = "1.01";
+  constructor() {
+    console.log("AppModule constructor v=" + AppModule.VER);
+  }
+}
