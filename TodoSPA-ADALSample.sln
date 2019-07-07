@@ -7,11 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoSPA", "TodoSPA\TodoSPA.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docs", "_docs", "{05AA9AE2-C50F-4598-AF63-4E6FDB3B45BB}"
 	ProjectSection(SolutionItems) = preProject
+		_docs\AzureADResources.md = _docs\AzureADResources.md
 		readme.md = readme.md
 		_docs\TSA_DevNotes.md = _docs\TSA_DevNotes.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_initialSetup", "_initialSetup", "{299BA6CE-5906-46B5-A001-0D4D76A0D10A}"
+	ProjectSection(SolutionItems) = preProject
+		_initialSetup\_initialSetupReadme.md = _initialSetup\_initialSetupReadme.md
+		_initialSetup\alt-auth\authconfig-dev-local.ts = _initialSetup\alt-auth\authconfig-dev-local.ts
+		_initialSetup\alt-auth\authconfig-prod.ts = _initialSetup\alt-auth\authconfig-prod.ts
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthCallbackComponent } from "./shared/auth/auth-callback.component";
 import { CounterComponent } from './counter/counter.component';
 import { ErrorComponent } from "./shared/error.component";
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
@@ -7,6 +8,7 @@ import { TodoListComponent } from "./todo-list/todo-list.component";
 
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
+  { path: "auth-callback", component: AuthCallbackComponent },
   { path: 'counter', component: CounterComponent },
   { path: 'fetch-data', component: FetchDataComponent },
   { path: 'todo-list', component: TodoListComponent },

@@ -35,114 +35,15 @@ Note: run `npm install` from command prompt before running `ng --version`
 
 ## Update Angular 6 to 7
 
-### Angular CLI
-
-Check global npm packages:
-```cmd
-npm list -g --depth 0
-```
-got
-```txt
-C:\ProgramData\npm
-+-- @angular/cli@7.3.8
-+-- auth0-deploy-cli@3.0.1
-+-- gulp@3.9.1
-+-- http-server@0.11.1
-+-- live-server@1.2.0
-+-- npm@6.9.0
-+-- npm-windows-upgrade@6.0.1
-+-- rxjs-tslint@0.1.7
-+-- tslint@5.18.0
-```
-
-```cmd
-ng update
-```
-got
-```txt
-    We analyzed your package.json, there are some packages to update:
-
-      Name                                      Version                  Command to update
-     ---------------------------------------------------------------------------------------
-      @angular/cli                              6.0.8 -> 8.1.0           ng update @angular/cli
-      @angular/core                             6.0.5 -> 8.1.0           ng update @angular/core
-      @angular/core                             6.1.10 -> 7.2.15         ng update @angular/core
-      @nguniversal/aspnetcore-engine            6.0.0 -> 8.1.1           ng update @nguniversal/aspnetcore-engine
-      rxjs                                      6.2.1 -> 6.5.2           ng update rxjs
-
-
-    There might be additional packages that are outdated.
-    Or run ng update --all to try to update all at the same time.
-```
-
-With Angular CLI v7.3.8 installed globally, and version specified in package.json at ~6.0.0, to update to 7.3.8 for project:
-```cmd
-ng update @angular/cli@7.3.8
-```
-Updated `@angular/cli` in `package.json`.
-
-```cmd
-ng update @angular/core@7.2.15
-```
-updated multiple packages in `package.json`.
-
-```cmd
-ng update
-```
-got
-```txt
-    We analyzed your package.json, there are some packages to update:
-
-      Name                                      Version                  Command to update
-     ---------------------------------------------------------------------------------------
-      @angular/cli                              7.3.9 -> 8.1.0           ng update @angular/cli
-      @angular/core                             7.2.15 -> 8.1.0          ng update @angular/core
-      @nguniversal/aspnetcore-engine            6.0.0 -> 8.1.1           ng update @nguniversal/aspnetcore-engine
-
-
-    There might be additional packages that are outdated.
-    Run "ng update --all" to try to update all at the same time.
-```
-
-Compiled and ran and app runs successfully.
+[Updated Angular app code from Angular 6 to Angular 7](./_docs/TSA_Angular6to7.md)
 
 ## Todo Web API
 
-After looking at a number of Todo application samples, the [Tutorial: Create a web API with ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-2.2&tabs=visual-studio)
-looked to be the best to use.
+[Setting up the "To Do" Web API](./_docs/TSA_TodoWebApi.md)
 
-Copied files from the [Angular 7 Web App with .NET Core Web API and AAD Auth with MSAL](https://github.com/bgoodearl/TodoSPASample) 
-which were copied from [AspNetCore.Docs samples - 2.2 TodoApi](https://github.com/aspnet/AspNetCore.Docs/tree/master/aspnetcore/tutorials/first-web-api/samples/2.2/TodoApi)
+## Registering App with Azure AD
 
-```txt
-Controllers\TodoController.cs
-
-Models\TodoContent.cs
-TodoItem.cs
-```
-Changed namespace from `TodoApi` to `TodoSPA`.
-
-Added the following in Startup.cs:
-
-```cs
-using Microsoft.EntityFrameworkCore;
-//...
-using TodoSPA.Models;
-```
-and
-```cs
-    services.AddDbContext<TodoContext>(opt =>
-        opt.UseInMemoryDatabase("TodoList"));
-```
-
-### First API test
-Compiled app and tried API url: `https://localhost:44397/api/todo`.
-
-Got:
-```txt
-[{"id":1,"creationTime":"2019-07-04T17:22:19.7934869-04:00","name":"Item1","isComplete":false,"owner":"unknown"}]
-```
-
+[Steps to register with Azure AD](./_docs/TSA_AzureAppRegistration.md)
 
 ## Resources
 

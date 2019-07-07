@@ -7,6 +7,13 @@
         <th>Notes</th>
     </tr>
     <tr>
+        <td>7/5/2019</td><td>bg</td>
+		<td>
+			Added docs, moved some readme content into secondary docs.<br/>
+			Added initial ADAL auth code in Angular app.<br/>
+		</td>
+    </tr>
+    <tr>
         <td>7/4/2019</td><td>bg</td>
 		<td>
 			New solution in VS2019 - Angular app.

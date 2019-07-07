@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { appRoutes } from "./app.routes";
 import { AppComponent } from './app.component';
+import { AuthCallbackComponent } from "./shared/auth/auth-callback.component";
 import { CounterComponent } from './counter/counter.component';
 import { ErrorComponent } from "./shared/error.component";
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
@@ -13,11 +14,14 @@ import { HomeComponent } from './home/home.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { TodoListComponent } from "./todo-list/todo-list.component";
 
+import { AdalService } from "adal-angular4";
 import { TodoListService } from "./todo-list/todo-list.service";
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthCallbackComponent,
     CounterComponent,
     ErrorComponent,
     FetchDataComponent,
@@ -31,7 +35,8 @@ import { TodoListService } from "./todo-list/todo-list.service";
     FormsModule,
     RouterModule.forRoot(appRoutes, { useHash: true })
   ],
-  providers: [TodoListService],
+  providers: [AdalService, TodoListService,
+    {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
