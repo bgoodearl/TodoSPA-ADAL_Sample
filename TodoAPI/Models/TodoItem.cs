@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TodoSPA.Models
+namespace TodoAPI.Models
 {
     public class TodoItem
     {

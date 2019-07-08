@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TodoSPA.Controllers
+namespace TodoAPI.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
@@ -17,6 +16,16 @@ namespace TodoSPA.Controllers
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
+#if DEBUG
+            //Check for User (should be guaranteed if [Authorize] present
+            if ((this.User != null) && (this.User.Identity != null))
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+
+                }
+            }
+#endif
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

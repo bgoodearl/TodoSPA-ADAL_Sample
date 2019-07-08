@@ -7,6 +7,12 @@
         <th>Notes</th>
     </tr>
     <tr>
+        <td>7/7/2019</td><td>bg</td>
+		<td>
+			Added new project TodoAPI, moved API controllers to new project.<br/>
+		</td>
+    </tr>
+    <tr>
         <td>7/5/2019</td><td>bg</td>
 		<td>
 			Added docs, moved some readme content into secondary docs.<br/>

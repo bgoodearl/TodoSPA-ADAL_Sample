@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TodoSPA.Models;
+using TodoAPI.Models;
 
-namespace TodoSPA.Controllers
+namespace TodoAPI.Controllers
 {
     //[Authorize]
     [Route("api/[controller]")]
