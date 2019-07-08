@@ -10,6 +10,7 @@
         <td>7/7/2019</td><td>bg</td>
 		<td>
 			Added new project TodoAPI, moved API controllers to new project.<br/>
+			Add CORS support to Web API, change Ng app to use configured apiRoot.<br/>
 		</td>
     </tr>
     <tr>

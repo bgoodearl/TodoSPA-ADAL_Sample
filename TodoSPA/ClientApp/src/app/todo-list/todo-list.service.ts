@@ -1,18 +1,19 @@
-import { Injectable, Inject } from "@angular/core";
+import { Injectable } from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {TodoList} from "./todoList";
 import { map, catchError } from 'rxjs/operators';
+import { AUTH_CONFIG } from "../shared/auth/authconfig";
 
 @Injectable()
 export class TodoListService {
-  static VER: string = "1.02";
+  static VER: string = "1.03";
 
   private apiEndpoint: string = null; //"https://localhost:44358/api/todo";
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    console.log("todoListSvc constructor v=" + TodoListService.VER + " - baseUrl=[" + baseUrl + "]");
-    this.apiEndpoint = baseUrl + "api/todo";
+  constructor(private http: HttpClient) {
+    console.log("todoListSvc constructor v=" + TodoListService.VER + " - apiRoot=[" + AUTH_CONFIG.apiRoot + "]");
+    this.apiEndpoint = AUTH_CONFIG.apiRoot + "/api/todo";
   }
 
   getItems(): Observable<TodoList[]> {

@@ -1,5 +1,5 @@
-﻿//using System;
-//using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 //using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -17,6 +17,12 @@ namespace TodoAPI
 {
     public class Startup
     {
+        protected static class Constants
+        {
+            internal const string CorsOrigins = "CorsOrigins";
+            internal const string CorsPolicy_TodoAppCors = "TodoAppCorsPolicy";
+        }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,7 +35,22 @@ namespace TodoAPI
         {
             services.AddDbContext<TodoContext>(opt =>
                 opt.UseInMemoryDatabase("TodoList"));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            List<string> corsOrigins = new List<string>();
+            Configuration.Bind(Constants.CorsOrigins, corsOrigins);
+            if ((corsOrigins == null) || (corsOrigins.Count < 1))
+                throw new InvalidOperationException($"configuration {Constants.CorsOrigins} is empty.");
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(Constants.CorsPolicy_TodoAppCors,
+                    builder =>
+                    {
+                        builder.WithOrigins(corsOrigins.ToArray())
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                    });
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -46,6 +67,8 @@ namespace TodoAPI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseCors(Constants.CorsPolicy_TodoAppCors);
 
             app.UseHttpsRedirection();
             app.UseMvc();
