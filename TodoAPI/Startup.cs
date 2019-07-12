@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 //using System.Linq;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.AzureAD.UI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+//using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +38,10 @@ namespace TodoAPI
         {
             services.AddDbContext<TodoContext>(opt =>
                 opt.UseInMemoryDatabase("TodoList"));
+
+            services.AddAuthentication(AzureADDefaults.BearerAuthenticationScheme)
+                .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
+                //.AddCookie(options => options.Cookie.SameSite = SameSiteMode.None);
 
             List<string> corsOrigins = new List<string>();
             Configuration.Bind(Constants.CorsOrigins, corsOrigins);
@@ -69,6 +76,11 @@ namespace TodoAPI
             }
 
             app.UseCors(Constants.CorsPolicy_TodoAppCors);
+            app.UseAuthentication();
+            //app.UseCookiePolicy(new CookiePolicyOptions
+            //{
+            //    MinimumSameSitePolicy = SameSiteMode.None
+            //});
 
             app.UseHttpsRedirection();
             app.UseMvc();

@@ -8,7 +8,7 @@ using TodoAPI.Models;
 
 namespace TodoAPI.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TodoController : ControllerBase
