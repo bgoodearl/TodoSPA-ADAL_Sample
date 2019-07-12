@@ -7,6 +7,21 @@
         <th>Notes</th>
     </tr>
     <tr>
+        <td>7/12/2019</td><td>bg</td>
+		<td>
+			Corrected setup of endpoints in AppComponent.<br/>
+		</td>
+    </tr>
+    <tr>
+        <td>7/9/2019</td><td>bg</td>
+		<td>
+			Added ngOnInit with adal.handleWindowCallback to HomeComponent.
+			Removed AuthCallbackComponent.<br/>
+			Added UserInfoComponent<br/>
+			Added AdalGuard and AdalInterceptor.<br/>
+		</td>
+    </tr>
+    <tr>
         <td>7/7/2019</td><td>bg</td>
 		<td>
 			Added new project TodoAPI, moved API controllers to new project.<br/>

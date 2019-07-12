@@ -7,7 +7,7 @@ import { AdalService } from "adal-angular4";
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent implements OnInit {
-  static VER: string = "1.02";
+  static VER: string = "1.04";
   isExpanded = false;
   //isLoggedIn = false;
 
@@ -20,6 +20,7 @@ export class NavMenuComponent implements OnInit {
   }
 
   get isLoggedIn(): boolean {
+    //console.log("isLoggedIn authenticated=" + this.adal.userInfo.authenticated);
     return this.adal.userInfo.authenticated;
   }
 

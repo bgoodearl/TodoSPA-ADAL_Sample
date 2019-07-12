@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-auth-callback',
+  selector: 'error-info',
     template: `<h1>Page not found</h1>
                <p>This is an Error</p>
               `
