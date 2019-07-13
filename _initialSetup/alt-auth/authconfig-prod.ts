@@ -6,7 +6,8 @@ export const AUTH_CONFIG: AuthConfig = {
   apiId: "00000000-0000-0000-0000-000000000000",
   apiRoot: "",
   appRedirectUri: "",
-  authConfigType: "empty",
+  authConfigType: "prod-empty",
+  cacheLocation: "localStorage",
   clientId: "00000000-0000-0000-0000-000000000000",
   tenantId: "00000000-0000-0000-0000-000000000000"
 }

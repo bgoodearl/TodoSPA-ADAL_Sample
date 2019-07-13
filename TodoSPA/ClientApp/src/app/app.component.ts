@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
       endpoints: endpoints,
       navigateToLoginRequestUrl: false,
       popUp: false,
-      cacheLocation: "localStorage"
+      cacheLocation: AUTH_CONFIG.cacheLocation
     };
     //let weatherApiUrl: string = AUTH_CONFIG.apiRoot + "/api/SampleData/WeatherForecasts";
     //console.log(adalConfig);

@@ -10,6 +10,7 @@
         <td>7/12/2019</td><td>bg</td>
 		<td>
 			Corrected setup of endpoints in AppComponent.<br/>
+			Added cacheLocation to AuthConfig.<br/>
 		</td>
     </tr>
     <tr>

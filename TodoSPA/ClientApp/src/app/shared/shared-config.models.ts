@@ -3,6 +3,7 @@ export interface AuthConfig {
   apiRoot: string;
   appRedirectUri: string;
   authConfigType: string;
+  cacheLocation: string;
   clientId: string;
   tenantId: string;
 }
